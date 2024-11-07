@@ -6,6 +6,6 @@ Segue uma implementação web com phoenix live view.
 
 Assumindo que você tem o elixir e o nodejs instalado.
 
-`mix phx.server` servirá no `localhost:4000`
+`mix setup && mix phx.server` servirá no `localhost:4000`
 
 Demonstração: https://megasena.fly.dev/
