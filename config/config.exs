@@ -7,9 +7,9 @@
 # General application configuration
 import Config
 
-config :megasena,
-  ecto_repos: [Megasena.Repo],
-  generators: [timestamp_type: :utc_datetime]
+# config :megasena,
+#   ecto_repos: [Megasena.Repo],
+#   generators: [timestamp_type: :utc_datetime]
 
 # Configures the endpoint
 config :megasena, MegasenaWeb.Endpoint,
