@@ -1,0 +1,36 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* This file is for your main application CSS */
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Color Palette */
+:root {
+  --primary-blue: #003399;
+  --secondary-blue: #0055cc;
+  --light-gray: #f2f2f2;
+  --dark-gray: #333333;
+  --white: #ffffff;
+}
+
+/* Apply font */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--light-gray);
+  color: var(--dark-gray);
+}
+
+header {
+  background-color: var(--primary-blue);
+  color: var(--white); /* Sets text color to white for contrast */
+  padding: 1rem; /* Add some padding for spacing */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header a {
+  color: var(--white); /* Sets text color to white for contrast */
+}
