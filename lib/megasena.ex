@@ -1,6 +1,9 @@
-defmodule MegaSena do
-  def main(tries) do
-    # Start the game by calling the `play` function in `MegaSena.Player`
-    MegaSena.Player.play(tries)
-  end
+defmodule Megasena do
+  @moduledoc """
+  Megasena keeps the contexts that define your domain
+  and business logic.
+
+  Contexts are also responsible for managing your data, regardless
+  if it comes from the database, an external API or others.
+  """
 end

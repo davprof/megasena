@@ -1,4 +1,4 @@
-defmodule MegaSena.Supervisor do
+defmodule Megasena.Supervisor do
   use Supervisor
 
   # Accept numbers and guesses as arguments
@@ -8,10 +8,10 @@ defmodule MegaSena.Supervisor do
 
   def init({numbers, guesses}) do
     children = [
-      # Pass numbers to MegaSena.Server
-      {MegaSena.Server, numbers},
-      # Pass guesses and numbers to MegaSena.Player
-      {MegaSena.Player, {guesses, numbers}}
+      # Pass numbers to Megasena.Server
+      {Megasena.Server, numbers},
+      # # Pass guesses and numbers to Megasena.Player
+      {Megasena.Player, {guesses, numbers}}
     ]
 
     # Supervisor with :one_for_one strategy

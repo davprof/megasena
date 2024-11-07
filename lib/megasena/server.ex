@@ -1,4 +1,4 @@
-defmodule MegaSena.Server do
+defmodule Megasena.Server do
   use GenServer
 
   # Client API
@@ -43,8 +43,8 @@ defmodule MegaSena.Server do
 
   # Convenience function to start a new instance and inspect the numbers
   def new(numbers) do
-    {:ok, pid} = MegaSena.Server.start_link(numbers)
-    IO.inspect(MegaSena.Server.get_numbers(), label: "Generated numbers")
+    {:ok, pid} = Megasena.Server.start_link(numbers)
+    IO.inspect(Megasena.Server.get_numbers(), label: "Generated numbers")
     pid
   end
 end
