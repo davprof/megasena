@@ -2,6 +2,8 @@ defmodule MegasenaWeb.HomeLive do
   use MegasenaWeb, :live_view
 
   def mount(_params, _session, socket) do
+    Megasena.Player.reset()
+
     server_numbers = Megasena.Server.get_numbers()
 
     dbg(server_numbers)
@@ -54,6 +56,12 @@ defmodule MegasenaWeb.HomeLive do
 
   def handle_event("bet", _value, socket) do
     state = Megasena.Player.play(socket.assigns.tries)
+
+    {:noreply, assign(socket, :state, state)}
+  end
+
+  def handle_event("reset", _value, socket) do
+    state = Megasena.Player.reset()
 
     {:noreply, assign(socket, :state, state)}
   end

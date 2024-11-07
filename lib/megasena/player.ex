@@ -37,6 +37,16 @@ defmodule Megasena.Player do
     {:reply, response, %{state | plays: plays + 1, cost: (plays + 1) * 5, wins: new_wins, story: [response | story]}}
   end
 
+  # Reset state from 0
+  def handle_call(
+    :reset,
+    _from,
+    %{server: server, guesses: guesses, numbers: numbers}
+   ) do
+    state_0 = %{server: server, plays: 0, cost: 0, wins: 0, guesses: guesses, numbers: numbers, story: []}
+    {:reply, state_0, state_0}
+end
+
   # Retrieve the current state
   def handle_call(:get_state, _from, state) do
     {:reply, state, state}
@@ -57,6 +67,11 @@ defmodule Megasena.Player do
   # Public API to get the current state
   def get_state() do
     GenServer.call(__MODULE__, :get_state)
+  end
+
+  # Public API to reset state
+  def reset() do
+    GenServer.call(__MODULE__, :reset)
   end
 
   # Optional helper function to start the player and check the state
