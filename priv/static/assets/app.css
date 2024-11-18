@@ -992,12 +992,20 @@ select{
   margin-top: 0.5rem;
 }
 
+.mt-20{
+  margin-top: 5rem;
+}
+
 .mt-3{
   margin-top: 0.75rem;
 }
 
 .mt-4{
   margin-top: 1rem;
+}
+
+.mt-6{
+  margin-top: 1.5rem;
 }
 
 .block{
@@ -1140,6 +1148,10 @@ select{
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
+.flex-col{
+  flex-direction: column;
+}
+
 .items-center{
   align-items: center;
 }
@@ -1170,6 +1182,10 @@ select{
 
 .gap-6{
   gap: 1.5rem;
+}
+
+.gap-2{
+  gap: 0.5rem;
 }
 
 .gap-x-6{
@@ -1396,6 +1412,11 @@ select{
   padding-bottom: 1rem;
 }
 
+.py-8{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .pb-4{
   padding-bottom: 1rem;
 }
@@ -1406,6 +1427,10 @@ select{
 
 .text-left{
   text-align: left;
+}
+
+.text-center{
+  text-align: center;
 }
 
 .text-right{
@@ -1662,6 +1687,25 @@ header a {
   /* Sets text color to white for contrast */
 }
 
+/* Make the wrapper take full height and display as flex */
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Ensure the main content area grows to fill available space */
+
+.content-wrapper {
+  flex: 1;
+  /* This makes the main content take the remaining height */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  /* In case content overflows */
+}
+
 .hover\:cursor-pointer:hover{
   cursor: pointer;
 }
@@ -1678,6 +1722,11 @@ header a {
 .hover\:bg-zinc-700:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(63 63 70 / var(--tw-bg-opacity));
+}
+
+.hover\:text-zinc-400:hover{
+  --tw-text-opacity: 1;
+  color: rgb(161 161 170 / var(--tw-text-opacity));
 }
 
 .hover\:text-zinc-700:hover{
@@ -1741,6 +1790,10 @@ header a {
 }
 
 @media (min-width: 640px){
+  .sm\:mt-0{
+    margin-top: 0px;
+  }
+
   .sm\:w-96{
     width: 24rem;
   }
@@ -1776,6 +1829,10 @@ header a {
 
   .sm\:grid-cols-3{
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .sm\:flex-row{
+    flex-direction: row;
   }
 
   .sm\:flex-col{
@@ -1822,6 +1879,10 @@ header a {
   .sm\:py-6{
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
+  }
+
+  .sm\:text-left{
+    text-align: left;
   }
 
   .sm\:text-sm{
