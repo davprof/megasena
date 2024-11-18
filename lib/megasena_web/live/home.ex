@@ -24,12 +24,14 @@ defmodule MegasenaWeb.HomeLive do
       <h1>Megasena!</h1>
       <h2>Faça sua aposta</h2>
       <.form phx-change="update_tries">
-        <label for="tries">Quantos tickets de 10 números você vai tentar apostar? (5 R$)</label>
+        <label for="tries">Quantos tickets de 10 números você vai tentar apostar? (5 R$) (max: 10000)</label>
         <input
           type="number"
           name="tries"
           id="tries"
           min="1"
+          max="10000"
+          oninput="this.value = Math.min(this.value, 10000)"
           value={@tries}
         />
       </.form>
